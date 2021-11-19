@@ -1,0 +1,81 @@
+
+/* class imagen de fondo*/
+div{
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(/assets/imagenes/almacen.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    
+   
+}
+div::before{
+    content: "";
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: -5;
+    left: 0;
+
+    background-image: linear-gradient(
+    blue,orange);
+    opacity: 0.2;
+    
+     
+    
+}
+/*class imag promos*/
+h1{
+    margin-top: 50px;
+    position: absolute; 
+     
+}
+.promo{
+    position: absolute;
+    width: 400px;
+    margin-left: -450px;
+    margin-top: 190px;
+    border-radius: 6px;
+    opacity: 90%;
+    box-shadow: 2px 2px 2px;
+    
+}
+a{
+    margin-top: 3px;
+    margin-right: 1030px;
+    color:black;
+}
+.promo2{
+    position: absolute;
+    width: 360px;
+    margin-top: 190px;
+    border-radius: 6px;
+    opacity: 90%;
+    box-shadow: 2px 2px 2px;
+}
+h2{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    color: black;
+}
+.promo3{
+    position: absolute;
+    width: 400px;
+    margin-left: 450px;
+    margin-top: 190px;
+    border-radius: 6px;
+    opacity: 90%;
+    box-shadow: 2px 2px 2px;    
+
+}
+#llanta{
+    margin-left: 900px;
+    color: black;
+}

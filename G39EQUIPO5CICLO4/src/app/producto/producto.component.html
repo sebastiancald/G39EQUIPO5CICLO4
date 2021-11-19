@@ -1,0 +1,93 @@
+
+
+
+
+<div class="container">
+
+</div>
+<div class="rui-page content-wrap">
+  <div class="rui-page-title">
+    <div class="container-fluid">
+      <div class="pixel">
+        <h1>Administrar Productos</h1>
+      </div>
+      <br>
+
+
+      <span>
+        <h3>INGRESE DATOS DEL PRODUCTO</h3>
+        <br>
+        
+        <ul>
+          <input class="form-control" type="text"  placeholder="Codigo Producto">
+          <br>
+          <input class="form-control" type="text"  placeholder="IVA Compra">
+          <br>
+          <input class="form-control" type="text"  placeholder="Nit Proveedor">
+          <br>
+          <input class="form-control" type="text"  placeholder="Nombre Producto">
+          <br>
+          <input class="form-control" type="text"  placeholder="Precio">
+
+        </ul>
+        <div *ngIf="codigoRespuesta==201" class="alert alert-success 
+                animate__animated animate__backInDown" role="alert">Datos insertados correctamenta</div>
+        <div *ngIf="" class="alert alert-danger
+                animate__animated animate__pulse" role="alert">Ingrese los datos correctamenta</div>
+
+        <button id="btn2" (click)="postData()">INSERTAR</button>
+
+      </span><br><br><br>
+      <span>
+        <button id="btn1" (click)="ngOnInit()">GENERAR TABLA</button>
+      </span>
+      <span>
+        <button id="btn3">BORRAR PRODUCTO</button>
+      </span>
+
+
+      <input id="btnsubir" type="file" name="file" class="rui-dropzone-input">
+
+      <!-- Your Remove-icon -->
+      <span data-feather="x" class="rui-icon rui-icon-stroke-1_5 rui-dropzone-remove-icon"></span>
+
+      <div class="dz-message">
+        <span class="rui-dropzone-icon"> <span data-feather="upload-cloud" class="rui-icon rui-icon-stroke-0_5"></span>
+        </span>
+      </div>
+
+    </div>
+  </div>
+  <br><br>
+
+
+  <!--se da forma a la informacion convirtiendo en tabla-->
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Codigo producto</th>
+        <th>Iva compra</th>
+        <th>Nit proveedor</th>
+        <th>Nombre producto</th>
+        <th>Precio compra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of contenido">
+        <td>{{producto.codigoproducto}}</td>
+        <td>{{producto.ivacompra}}</td>
+        <td>{{producto.nitproveedor}}</td>
+        <td>{{producto.nombreproducto}}</td>
+        <td>{{producto.preciocompra}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+</div>
+
+
+

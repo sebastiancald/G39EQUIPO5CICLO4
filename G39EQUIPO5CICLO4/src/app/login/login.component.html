@@ -1,0 +1,49 @@
+
+
+
+
+<img class="wave" src="assets/imagenes/img.png" />
+
+<div class="titulo">
+  <br>
+  <h4>Cadena de Almacenes la Generica </h4>
+  <h3>Grupo 5</h3>
+</div>
+<div class="container">
+  <div class="img">
+    <img src="assets/imagenes/wave.svg">
+  </div>
+  <div class="login-container">
+    <form>
+      <img class="avatar" src="assets/imagenes/avatar.png" />
+      <h2>Bienvenido</h2>
+      <div class="input-div one ">
+        <div class="i">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+
+          <input id="input_user" type="text" placeholder="Usuario" class="input" #usuario >
+        </div>
+      </div>
+
+      <div class="input-div two">
+        <div class="i">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div>
+
+          <input id="input_pass" type="password" placeholder="Password" class="input" #contrase >
+        </div>
+      </div>
+      <a href="#">Olvido su contraseña?</a>
+     <button type="button"
+        class="btn btn-success" (click)= "logear (usuario.value,contrase.value)" [routerLink]="'producto'"> Entrar</button> 
+    
+    </form>
+
+
+  </div>
+</div>
+
+
