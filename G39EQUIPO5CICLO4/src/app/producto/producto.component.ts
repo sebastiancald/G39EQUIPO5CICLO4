@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ProductoService } from 'src/app/componentes/producto.service';
+import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-producto',
@@ -12,7 +14,8 @@ export class ProductoComponent implements OnInit {
   contenido: any;
   urlapi: string = "http://localhost:8080/api/productos";
 
-  constructor(private objettohttp: HttpClient) { }
+  constructor(private objettohttp: HttpClient, private productoService: ProductoService, 
+    private _config:NgbAccordionConfig) { }
 
   ngOnInit(): void {
     this.res= this.objettohttp.get(this.urlapi);
@@ -49,6 +52,18 @@ postData(){
     this.res2=response;
   })
 }
+resultados: any;
+  file!: File;
+
+  onChange (evento:any){
+    this.file=evento.target.file[0];
+  }
+
+  async onUpload(){
+    this.resultados=await this.productoService.upload(this.file);
+    console.log(this.resultados);
+  }
+
 
 }
 

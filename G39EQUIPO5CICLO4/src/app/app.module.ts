@@ -17,6 +17,7 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { TablaMostrarComponent } from './componentes/tabla-mostrar/tabla-mostrar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ClientesComponent } from './componentes/clientes/clientes.component';
 
 
 
@@ -34,7 +35,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MenuComponent,
     SidebarComponent,
     TablaMostrarComponent,
-    NavbarComponent
+    NavbarComponent,
+    ClientesComponent
     
     
     

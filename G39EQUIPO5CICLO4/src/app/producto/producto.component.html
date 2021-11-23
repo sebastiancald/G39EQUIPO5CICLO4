@@ -1,24 +1,26 @@
 
 
+<app-sidebar></app-sidebar>
 
 
-<div class="container">
-
-</div>
-<div class="rui-page content-wrap">
+<div id="tab" class="rui-page content-wrap">
+  
   <div class="rui-page-title">
     <div class="container-fluid">
       <div class="pixel">
         <h1>Administrar Productos</h1>
       </div>
+      
       <br>
 
 
       <span>
+        
         <h3>INGRESE DATOS DEL PRODUCTO</h3>
         <br>
         
         <ul>
+          
           <input class="form-control" type="text"  placeholder="Codigo Producto">
           <br>
           <input class="form-control" type="text"  placeholder="IVA Compra">
@@ -35,26 +37,35 @@
         <div *ngIf="" class="alert alert-danger
                 animate__animated animate__pulse" role="alert">Ingrese los datos correctamenta</div>
 
-        <button id="btn2" (click)="postData()">INSERTAR</button>
+        <button id="btn2" class="btn btn-success" (click)="postData()">INSERTAR</button>
 
       </span><br><br><br>
+      <div>
+        <button id="btn3">BORRAR PRODUCTO</button><br><br>
+        <input class="form-control" type="text"  placeholder="Codigo Producto"><br>
+        <button id="btn6" class="btn btn-success">BUSCAR</button>
+
+      </div>
+      <br><br>
+
+
+      <div class="text-center">
+        <button id="btn7">CARGAR ACRHIVO (CSV)</button><br><br>
+        <input type="file" class="form-control" (change)="onChange($event)"> <br>
+    
+        <button (click)="onUpload()" class="btn btn-success">
+            Subir archivo
+        </button>
+        <div class="container">
+            <h3 *ngFor="let dato of resultados; let i= index">
+                Dato {{i}} obtuvo codigo {{dato}}
+            </h3>
+        
+      </div>
+      <br><br>
       <span>
         <button id="btn1" (click)="ngOnInit()">GENERAR TABLA</button>
       </span>
-      <span>
-        <button id="btn3">BORRAR PRODUCTO</button>
-      </span>
-
-
-      <input id="btnsubir" type="file" name="file" class="rui-dropzone-input">
-
-      <!-- Your Remove-icon -->
-      <span data-feather="x" class="rui-icon rui-icon-stroke-1_5 rui-dropzone-remove-icon"></span>
-
-      <div class="dz-message">
-        <span class="rui-dropzone-icon"> <span data-feather="upload-cloud" class="rui-icon rui-icon-stroke-0_5"></span>
-        </span>
-      </div>
 
     </div>
   </div>
@@ -82,6 +93,17 @@
       </tr>
     </tbody>
   </table>
+  <br><br>
+  <div>
+    <button id="btn4">CONSULTAR PRODUCTO</button>
+    <br><br>
+    <ul>
+      <input class="form-control" type="text"  placeholder="Codigo Producto">
+      <br>
+    </ul>
+
+    <button id="btn5" class="btn btn-success">BUSCAR</button>
+  </div>
 
 
 

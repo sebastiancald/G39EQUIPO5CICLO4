@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClientesComponent } from './componentes/clientes/clientes.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { TablasComponent } from './componentes/tablas/tablas.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -19,6 +20,10 @@ const routes: Routes = [
     
   },
   {
+    path:'menu/producto',
+    component:ProductoComponent
+  },
+  {
     path:'producto',
     component:ProductoComponent
   },
@@ -27,8 +32,12 @@ const routes: Routes = [
     component:MenuComponent
   },
   {
-    path:'tablas',
-    component:TablasComponent
+    path:'menu/clientes',
+    component:ClientesComponent
+  },
+  {
+    path:'clientes',
+    component:ClientesComponent
   }
  
   
