@@ -1,0 +1,117 @@
+
+<div id="tab" class="rui-page content-wrap">
+  
+  <div class="rui-page-title">
+    <div class="container-fluid">
+    
+      
+
+
+      <span>
+        <h1 class="pixel">Administrar Productos</h1><br><br>
+        
+        <h3>INGRESE DATOS DEL PRODUCTO</h3>
+        <br>
+        
+        <ul>
+          
+          <input class="form-control" type="text" [(ngModel)]="codigoproducto" placeholder="Codigo Producto">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="nombreproducto" placeholder="Nombre Producto">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="nitproveedor" placeholder="Nit Proveedor">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="preciocompra" placeholder="Precio compra">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="ivacompra" placeholder="Iva Compra">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="precioventa" placeholder="Precio Venta">
+
+        </ul>
+        <div *ngIf="codigoRespuesta==201" class="alert alert-success 
+                animate__animated animate__backInDown" role="alert">Datos insertados correctamenta</div>
+        <div *ngIf="codigoRespuesta==500" class="alert alert-danger
+                animate__animated animate__pulse" role="alert">Ingrese los datos correctamenta</div>
+
+        <button id="btn2" class="btn btn-success" (click)="postData()">INSERTAR</button>
+
+      </span><br><br><br>
+      <div>
+        <ngb-accordion class="text-center">
+        <ngb-panel id="btn3" title="BORRAR PRODUCTO"><br><br>
+          <ng-template ngbPanelContent>
+        <input class="form-control" type="text"  placeholder="Codigo Producto"><br>
+        <button id="btn6" class="btn btn-success">BUSCAR</button>
+      </ng-template>
+      </ngb-panel>
+
+      <ngb-panel  title="CARGAR ARCHIVO CSV"><br><br>
+        <ng-template ngbPanelContent>
+      <input class="form-control" type="file"  (change)="onChange($event)"> <br>
+      <button (click)="onUpload()" class="btn btn-success">
+        Subir archivo
+    </button>
+    {{recibido}}
+    <div class="container">
+        <h3 *ngFor="let dato of resultados; let i= index">
+            Dato {{i}} obtuvo codigo {{dato}}
+        </h3>
+    
+  </div>
+  <br><br>
+    </ng-template>
+    </ngb-panel>
+
+    <ngb-panel  title="TABLAS"><br><br>
+      <ng-template ngbPanelContent>
+        <button id="btn1" class="btn btn-success" (click)="ngOnInit()">GENERAR TABLA</button><br><br> 
+
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th>Codigo producto</th>
+              <th>Nombre producto</th>
+              <th>Nit proveedor</th>
+              <th>Precio compra</th>
+              <th>Iva compra</th>
+              <th>Precio venta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of contenido">
+              <td>{{producto.codigoproducto}}</td>
+              <td>{{producto.nombreproducto}}</td>
+              <td>{{producto.nitproveedor}}</td>
+              <td>{{producto.preciocompra}}</td>
+              <td>{{producto.ivacompra}}</td>
+              <td>{{producto.precioventa}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+  </ng-template>
+  </ngb-panel>
+
+  <ngb-panel  title="CONSULTAR PRODUCTO"><br><br>
+    <ng-template ngbPanelContent>
+  <input class="form-control" type="text"  placeholder="Codigo Producto"><br>
+  <button id="btn6" class="btn btn-success">BUSCAR</button>
+</ng-template>
+</ngb-panel>
+
+    </ngb-accordion>
+      </div>
+      <br><br>
+
+
+      
+  </div>
+
+
+
+
+
+</div>
+
+
+
