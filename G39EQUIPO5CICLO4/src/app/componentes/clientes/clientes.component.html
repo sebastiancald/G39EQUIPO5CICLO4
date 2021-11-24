@@ -1,58 +1,75 @@
-<app-sidebar></app-sidebar>
+
 
 
 <div id="tab" class="rui-page content-wrap">
   
   <div class="rui-page-title">
     <div class="container-fluid">
-      <div class="pixel">
-        <h1>Administrar Clientes</h1>
-      </div>
       
-      <br>
+        
+     
+      
+  
 
 
       <span>
+        <h1 class="pixel text-center"> Administrar Clientes</h1><br><br>
         
         <h3>INGRESE DATOS DEL CLIENTE</h3>
         <br>
         
         <ul>
           
-          <input class="form-control" type="text"  placeholder="Codigo Producto">
+          <input class="form-control" type="text" [(ngModel)]="cedulacliente" placeholder="Cedula">
           <br>
-          <input class="form-control" type="text"  placeholder="IVA Compra">
+          <input class="form-control" type="text" [(ngModel)]="direccioncliente" placeholder="Direccion">
           <br>
-          <input class="form-control" type="text"  placeholder="Nit Proveedor">
+          <input class="form-control"  type="text" [(ngModel)]="emailcliente" placeholder="&#64; E-mail">
           <br>
-          <input class="form-control" type="text"  placeholder="Nombre Producto">
+          <input class="form-control" type="text" [(ngModel)]="nombrecliente" placeholder="Nombre">
           <br>
-          <input class="form-control" type="text"  placeholder="Precio">
+          <input class="form-control" type="text" [(ngModel)]="telefonocliente" placeholder="Telefono">
 
         </ul>
-       <!-- <div *ngIf="codigoRespuesta==201" class="alert alert-success 
+      <div *ngIf="codigoRespuesta==201" class="alert alert-success 
                 animate__animated animate__backInDown" role="alert">Datos insertados correctamenta</div>
         <div *ngIf="" class="alert alert-danger
-                animate__animated animate__pulse" role="alert">Ingrese los datos correctamenta</div>-->
+                animate__animated animate__pulse" role="alert">Ingrese los datos correctamenta</div>
 
-        <button id="btn2" class="btn btn-success">INSERTAR</button>
+        <button id="btn2" class="btn btn-success" (click)="postData()" >INSERTAR</button>
 
       </span><br><br><br>
       <div>
-        <button id="btn3">BORRAR CLIENTE</button><br><br>
-        <input class="form-control" type="text"  placeholder="Codigo Producto"><br>
-        <button id="btn6" class="btn btn-success">BUSCAR</button>
+        <ngb-accordion class="text-center">
+          <ngb-panel id="btn3" title="BORRAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula"><br>
+               <button id="btn6" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
 
-      </div>
-      <br><br>
-      <span>
-        <button id="btn1" (click)="ngOnInit()">GENERAR TABLA</button>
-      </span>
+          <ngb-panel id="btn2" title="CONSULTAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula">
+              <button id="btn5" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
 
-    </div>
-  </div>
-  <br><br>
+          <ngb-panel id="btn1" title="ACTUALIZAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula">
+              <button id="btn5" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel  title="ACTUALIZAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula">
+              <button id="btn5" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
 
+        </ngb-accordion>
+        
 
   <!--se da forma a la informacion convirtiendo en tabla-->
   <!--<table class="table">
@@ -75,19 +92,7 @@
       </tr>
     </tbody>
   </table>-->
-  <br><br>
-  <div>
-    <button id="btn4">CONSULTAR CLIENTE</button>
-    <br><br>
-    <ul>
-      <input class="form-control" type="text"  placeholder="Codigo Producto">
-      <br>
-    </ul>
-
-    <button id="btn5" class="btn btn-success">BUSCAR</button>
-  </div>
-
-
+ 
 
 
 

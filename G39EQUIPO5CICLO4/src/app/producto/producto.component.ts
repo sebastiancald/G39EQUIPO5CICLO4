@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ProductoService } from 'src/app/componentes/producto.service';
 import {NgbAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-producto',
   templateUrl: './producto.component.html',
@@ -14,11 +15,12 @@ export class ProductoComponent implements OnInit {
   contenido: any;
   urlapi: string = "http://localhost:8080/api/productos";
 
-  constructor(private objettohttp: HttpClient, private productoService: ProductoService, 
-    private _config:NgbAccordionConfig) { }
+  constructor(private objectHttp: HttpClient, private productoService: ProductoService, 
+    private _config:NgbAccordionConfig) {_config.closeOthers=true }
 
-  ngOnInit(): void {
-    this.res= this.objettohttp.get(this.urlapi);
+  //obtine info del back
+    ngOnInit(): void {
+    this.res= this.objectHttp.get(this.urlapi);
     this.res.subscribe((datos:any[])=>{
       this.contenido=datos;
       console.log(this.contenido);
@@ -29,20 +31,23 @@ export class ProductoComponent implements OnInit {
 codigoRespuesta!: number;
 res2: any;
 
-codigoproducto!: string;
-ivacompra!: string;
-nitproveedor!: string;
+codigoproducto!: bigint;
 nombreproducto!:string;
-preciocompra!:string;
+nitproveedor!: number;
+ivacompra!: number;
+precioventa!:number;
+
+
+//envio info csv
 postData(){
-  this.objettohttp.post<any>(
+  this.objectHttp.post<any>(
     'http://localhost:8080/api/productos',{
       
       codigoproducto: this.codigoproducto,
-      ivacompra: this.ivacompra,
-      nitproveedor: this.nitproveedor,
       nombreproducto: this.nombreproducto,
-      preciocompra: this.preciocompra
+      nitproveedor: this.nitproveedor,
+      ivacompra: this.ivacompra,
+      precioventa: this.precioventa
     },
     {
       observe: "response"
@@ -52,14 +57,18 @@ postData(){
     this.res2=response;
   })
 }
-resultados: any;
-  file!: File;
 
-  onChange (evento:any){
-    this.file=evento.target.file[0];
+
+resultados: any;
+file!: File;
+recibido: boolean=false;
+
+  onChange (event:any){
+    this.file=event.target.file[0];
   }
 
-  async onUpload(){
+  async onUpload() {
+    console.log(this.file);
     this.resultados=await this.productoService.upload(this.file);
     console.log(this.resultados);
   }

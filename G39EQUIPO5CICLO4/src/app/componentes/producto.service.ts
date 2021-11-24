@@ -22,19 +22,21 @@ export class ProductoService {
         let columnas = lienaactual.split(",");
         this.httpObject.post(this.apiurl,{
 
-          "codigoproducto": columnas[0],
-          "ivacompra": columnas[4],
-          "nitproveedor": columnas[2],
-          "nombreproducto": columnas[1],
-          "preciocompra": columnas[3],
-          "precioventa": columnas[5]
+          codigoproducto: columnas[0],
+          ivacompra: columnas[4],
+          nitproveedor: columnas[2],
+          nombreproducto: columnas[1],
+          preciocompra: columnas[3],
+          precioventa: columnas[5]
         },
         {
           observe: 'response'
         }).subscribe((
           response:any
         )=>{
-          this.resultado.push(response.status);
+          let resaux = [];
+          resaux[0] = response.status;
+          this.resultado.push(resaux);
         });
       }
         

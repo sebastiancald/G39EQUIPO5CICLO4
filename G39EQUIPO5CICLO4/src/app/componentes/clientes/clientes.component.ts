@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ClientesService } from '../clientes.service';
 
 @Component({
@@ -8,15 +9,16 @@ import { ClientesService } from '../clientes.service';
   styleUrls: ['./clientes.component.scss']
 })
 export class ClientesComponent implements OnInit {
-  res: any;
+  res1: any;
   contenido: any;
-  urlapi: string = "http://localhost:8080/api/clientes";
+  urlapi1: string = "http://localhost:8080/api/clientes";
 
-  constructor(private objectHttp: HttpClient, private clientesService: ClientesService) { }
+  constructor(private objectHttp: HttpClient, private clientesService: ClientesService,
+     private _config:NgbAccordionConfig) {_config.closeOthers=true }
 
   ngOnInit(): void {
-    this.res= this.objectHttp.get(this.urlapi);
-    this.res.subscribe((datos:any[])=>{
+    this.res1= this.objectHttp.get(this.urlapi1);
+    this.res1.subscribe((datos:any[])=>{
       this.contenido=datos;
       console.log(this.contenido);
     });
@@ -26,20 +28,20 @@ export class ClientesComponent implements OnInit {
 codigoRespuesta!: number;
 res2: any;
 
-codigoproducto!: string;
-ivacompra!: string;
-nitproveedor!: string;
-nombreproducto!:string;
-preciocompra!:string;
+cedulacliente!: string;
+direccioncliente!: string;
+emailcliente!: string;
+nombrecliente!:string;
+telefonocliente!:string;
 postData(){
   this.objectHttp.post<any>(
     'http://localhost:8080/api/clientes',{
       
-      codigoproducto: this.codigoproducto,
-      ivacompra: this.ivacompra,
-      nitproveedor: this.nitproveedor,
-      nombreproducto: this.nombreproducto,
-      preciocompra: this.preciocompra
+      cedulacliente: this.cedulacliente,
+      direccioncliente: this.direccioncliente,
+      emailcliente: this.emailcliente,
+      nombrecliente: this.nombrecliente,
+      telefonocliente: this.telefonocliente
     },
     {
       observe: "response"

@@ -1,7 +1,7 @@
 
 /* class imagen de fondo*/
 div{
-    margin: 0;
+    margin: 55px;
     min-height: 100vh;
     background-image: url(/assets/imagenes/almacen.jpg);
     background-repeat: no-repeat;
@@ -31,8 +31,12 @@ div::before{
 }
 /*class imag promos*/
 h1{
-    margin-top: 50px;
+    margin-top: 80px;
+    background-color: blanchedalmond;
+    width: 300px;
+    border-radius: 15px;
     position: absolute; 
+    color: black;
      
 }
 .promo{
@@ -78,4 +82,7 @@ h2{
 #llanta{
     margin-left: 900px;
     color: black;
+}
+.container{
+    margin-top: 50px;
 }
