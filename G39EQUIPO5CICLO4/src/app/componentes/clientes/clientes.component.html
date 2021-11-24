@@ -1,0 +1,103 @@
+
+
+
+<div id="tab" class="rui-page content-wrap">
+  
+  <div class="rui-page-title">
+    <div class="container-fluid">
+      
+        
+     
+      
+  
+
+
+      <span>
+        <h1 class="pixel text-center"> Administrar Clientes</h1><br><br>
+        
+        <h3>INGRESE DATOS DEL CLIENTE</h3>
+        <br>
+        
+        <ul>
+          
+          <input class="form-control" type="text" [(ngModel)]="cedulacliente" placeholder="Cedula">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="direccioncliente" placeholder="Direccion">
+          <br>
+          <input class="form-control"  type="text" [(ngModel)]="emailcliente" placeholder="&#64; E-mail">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="nombrecliente" placeholder="Nombre">
+          <br>
+          <input class="form-control" type="text" [(ngModel)]="telefonocliente" placeholder="Telefono">
+
+        </ul>
+      <div *ngIf="codigoRespuesta==201" class="alert alert-success 
+                animate__animated animate__backInDown" role="alert">Datos insertados correctamenta</div>
+        <div *ngIf="" class="alert alert-danger
+                animate__animated animate__pulse" role="alert">Ingrese los datos correctamenta</div>
+
+        <button id="btn2" class="btn btn-success" (click)="postData()" >INSERTAR</button>
+
+      </span><br><br><br>
+      <div>
+        <ngb-accordion class="text-center">
+          <ngb-panel id="btn3" title="BORRAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula"><br>
+               <button id="btn6" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
+
+          <ngb-panel id="btn2" title="CONSULTAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula">
+              <button id="btn5" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
+
+          <ngb-panel id="btn1" title="ACTUALIZAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula">
+              <button id="btn5" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel  title="ACTUALIZAR CLIENTE"><br><br>
+            <ng-template ngbPanelContent>
+              <input class="form-control" type="text"  placeholder="Cedula">
+              <button id="btn5" class="btn btn-success">BUSCAR</button>
+            </ng-template>
+          </ngb-panel>
+
+        </ngb-accordion>
+        
+
+  <!--se da forma a la informacion convirtiendo en tabla-->
+  <!--<table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Codigo producto</th>
+        <th>Iva compra</th>
+        <th>Nit proveedor</th>
+        <th>Nombre producto</th>
+        <th>Precio compra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of contenido">
+        <td>{{producto.codigoproducto}}</td>
+        <td>{{producto.ivacompra}}</td>
+        <td>{{producto.nitproveedor}}</td>
+        <td>{{producto.nombreproducto}}</td>
+        <td>{{producto.preciocompra}}</td>
+      </tr>
+    </tbody>
+  </table>-->
+ 
+
+
+
+</div>
+
+
+
+

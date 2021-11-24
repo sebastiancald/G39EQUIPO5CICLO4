@@ -21,8 +21,6 @@
           <br>
           <input class="form-control" type="text" [(ngModel)]="nitproveedor" placeholder="Nit Proveedor">
           <br>
-          <input class="form-control" type="text" [(ngModel)]="preciocompra" placeholder="Precio compra">
-          <br>
           <input class="form-control" type="text" [(ngModel)]="ivacompra" placeholder="Iva Compra">
           <br>
           <input class="form-control" type="text" [(ngModel)]="precioventa" placeholder="Precio Venta">
@@ -72,9 +70,8 @@
               <th>Codigo producto</th>
               <th>Nombre producto</th>
               <th>Nit proveedor</th>
-              <th>Precio compra</th>
               <th>Iva compra</th>
-              <th>Precio venta</th>
+              <th>Precio compra</th>
             </tr>
           </thead>
           <tbody>
@@ -82,9 +79,8 @@
               <td>{{producto.codigoproducto}}</td>
               <td>{{producto.nombreproducto}}</td>
               <td>{{producto.nitproveedor}}</td>
-              <td>{{producto.preciocompra}}</td>
               <td>{{producto.ivacompra}}</td>
-              <td>{{producto.precioventa}}</td>
+              <td>{{producto.preciocompra}}</td>
             </tr>
           </tbody>
         </table>

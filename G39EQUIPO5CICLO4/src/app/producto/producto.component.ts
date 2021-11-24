@@ -31,12 +31,11 @@ export class ProductoComponent implements OnInit {
 codigoRespuesta!: number;
 res2: any;
 
-codigoproducto!: string;
+codigoproducto!: bigint;
 nombreproducto!:string;
-nitproveedor!: string;
-preciocompra!: string;
-ivacompra!: string;
-precioventa!:string;
+nitproveedor!: number;
+ivacompra!: number;
+precioventa!:number;
 
 
 //envio info csv
@@ -47,7 +46,6 @@ postData(){
       codigoproducto: this.codigoproducto,
       nombreproducto: this.nombreproducto,
       nitproveedor: this.nitproveedor,
-      preciocompra: this.preciocompra,
       ivacompra: this.ivacompra,
       precioventa: this.precioventa
     },

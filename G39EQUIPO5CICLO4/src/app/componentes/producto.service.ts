@@ -23,10 +23,10 @@ export class ProductoService {
         this.httpObject.post(this.apiurl,{
 
           codigoproducto: columnas[0],
-          nombreproducto: columnas[1],
-          nitproveedor: columnas[2],
-          preciocompra: columnas[3],
           ivacompra: columnas[4],
+          nitproveedor: columnas[2],
+          nombreproducto: columnas[1],
+          preciocompra: columnas[3],
           precioventa: columnas[5]
         },
         {
