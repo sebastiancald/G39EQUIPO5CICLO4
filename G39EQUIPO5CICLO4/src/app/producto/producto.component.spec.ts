@@ -1,14 +1,20 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+
 
 import { ProductoComponent } from './producto.component';
 
 describe('ProductoComponent', () => {
+  
   let component: ProductoComponent;
   let fixture: ComponentFixture<ProductoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductoComponent ]
+      declarations: [ ProductoComponent ],
+      imports: [HttpClientTestingModule]
+      
     })
     .compileComponents();
   });

@@ -21,6 +21,8 @@
           <br>
           <input class="form-control" type="text" [(ngModel)]="nitproveedor" placeholder="Nit Proveedor">
           <br>
+          <input class="form-control" type="text" [(ngModel)]="preciocompra" placeholder="Precio compra">
+          <br>
           <input class="form-control" type="text" [(ngModel)]="ivacompra" placeholder="Iva Compra">
           <br>
           <input class="form-control" type="text" [(ngModel)]="precioventa" placeholder="Precio Venta">
@@ -49,11 +51,12 @@
       <button (click)="onUpload()" class="btn btn-success">
         Subir archivo
     </button>
-    {{recibido}}
+    
     <div class="container">
         <h3 *ngFor="let dato of resultados; let i= index">
             Dato {{i}} obtuvo codigo {{dato}}
         </h3>
+        
     
   </div>
   <br><br>
@@ -70,8 +73,9 @@
               <th>Codigo producto</th>
               <th>Nombre producto</th>
               <th>Nit proveedor</th>
-              <th>Iva compra</th>
               <th>Precio compra</th>
+              <th>Iva compra</th>
+              <th>Precio venta</th>
             </tr>
           </thead>
           <tbody>
@@ -79,8 +83,9 @@
               <td>{{producto.codigoproducto}}</td>
               <td>{{producto.nombreproducto}}</td>
               <td>{{producto.nitproveedor}}</td>
-              <td>{{producto.ivacompra}}</td>
               <td>{{producto.preciocompra}}</td>
+              <td>{{producto.ivacompra}}</td>
+              <td>{{producto.precioventa}}</td>
             </tr>
           </tbody>
         </table>

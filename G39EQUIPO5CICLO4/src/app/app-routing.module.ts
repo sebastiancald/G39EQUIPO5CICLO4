@@ -19,22 +19,16 @@ const routes: Routes = [
     component:LoginComponent
     
   },
-  {
-    path:'menu/producto',
-    component:ProductoComponent
-  },
+    
   {
     path:'producto',
     component:ProductoComponent
   },
   {
-    path:'menu',
+    path:'login/menu',
     component:MenuComponent
   },
-  {
-    path:'menu/clientes',
-    component:ClientesComponent
-  },
+  
   {
     path:'clientes',
     component:ClientesComponent

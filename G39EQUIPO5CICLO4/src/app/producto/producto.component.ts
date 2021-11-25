@@ -31,11 +31,12 @@ export class ProductoComponent implements OnInit {
 codigoRespuesta!: number;
 res2: any;
 
-codigoproducto!: bigint;
+codigoproducto!: string;
 nombreproducto!:string;
-nitproveedor!: number;
-ivacompra!: number;
-precioventa!:number;
+nitproveedor!: string;
+preciocompra!: string;
+ivacompra!: string;
+precioventa!:string;
 
 
 //envio info csv
@@ -46,6 +47,7 @@ postData(){
       codigoproducto: this.codigoproducto,
       nombreproducto: this.nombreproducto,
       nitproveedor: this.nitproveedor,
+      preciocompra: this.preciocompra,
       ivacompra: this.ivacompra,
       precioventa: this.precioventa
     },
@@ -61,10 +63,11 @@ postData(){
 
 resultados: any;
 file!: File;
-recibido: boolean=false;
 
-  onChange (event:any){
-    this.file=event.target.file[0];
+
+  onChange(event:any){
+    console.log('onchange', event);
+    this.file=event.target.files[0];
   }
 
   async onUpload() {
@@ -72,6 +75,7 @@ recibido: boolean=false;
     this.resultados=await this.productoService.upload(this.file);
     console.log(this.resultados);
   }
+ 
 
 
 }
