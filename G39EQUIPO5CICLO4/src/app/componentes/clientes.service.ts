@@ -15,7 +15,7 @@ export class ClientesService {
 
   buscar(cedulacliente: string): Observable<any[]> {
     return this.httpObject.get<any[]>(
-      this.apiurl + 'getcedulaclientes/' + cedulacliente
+      this.apiurl + '/getcedulaclientes/' + cedulacliente
     );
   }
 
@@ -23,7 +23,7 @@ export class ClientesService {
     return this.httpObject.put(this.apiurl + '/' + cedulacliente, cliente);
   }
 
-  eliminar(id: string) {
-    return this.httpObject.delete(this.apiurl + '/' + id);
+  eliminar(cedulacliente: string) {
+    return this.httpObject.delete(this.apiurl + '/' + cedulacliente);
   }
 }

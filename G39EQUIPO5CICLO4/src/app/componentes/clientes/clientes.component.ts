@@ -98,8 +98,9 @@ resultados: any;
       telefonocliente: this.telefonocliente,
     };
 
-    this.clientesService.actualizar(this.id, cliente).subscribe((cliente) => {
-      this.id = "";
+    this.clientesService.actualizar(this.cedulacliente, cliente).subscribe((cliente) => {
+      console.log(this.cedulacliente, 'cedual', cliente, 'cliente');
+      this.cedulacliente = "";
       this.direccioncliente ="";
       this.emailcliente = "";
       this.telefonocliente = "";

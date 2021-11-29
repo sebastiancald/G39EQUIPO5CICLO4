@@ -19,7 +19,8 @@ import { TablaMostrarComponent } from './componentes/tabla-mostrar/tabla-mostrar
 import { NavbarComponent } from './navbar/navbar.component';
 import { ClientesComponent } from './componentes/clientes/clientes.component';
 import { VentasComponent } from './componentes/ventas/ventas.component';
-import {MatInputModule} from '@angular/material/input'
+import {MatInputModule} from '@angular/material/input';
+import { ReportesComponent } from './componentes/reportes/reportes.component'
 
 
 
@@ -39,7 +40,8 @@ import {MatInputModule} from '@angular/material/input'
     TablaMostrarComponent,
     NavbarComponent,
     ClientesComponent,
-    VentasComponent
+    VentasComponent,
+    ReportesComponent
     
     
     
