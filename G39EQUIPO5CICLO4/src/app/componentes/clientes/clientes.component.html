@@ -41,25 +41,86 @@
       </span><br><br><br>
       <div>
         <ngb-accordion class="text-center">
-          <ngb-panel id="btn3" title="BORRAR CLIENTE"><br><br>
+          <ngb-panel id="btn3" title="ELIMINAR CLIENTE"><br><br>
             <ng-template ngbPanelContent>
-              <input class="form-control" type="text"  placeholder="Cedula"><br>
-               <button id="btn6" class="btn btn-success">BUSCAR</button>
+              <input class="form-control" type="text"  placeholder="Id" [(ngModel)]="id"><br>
+               <button id="btn6" class="btn btn-success" (click)="eliminar()">ELIMINAR</button>
             </ng-template>
           </ngb-panel>
 
           <ngb-panel id="btn2" title="CONSULTAR CLIENTE"><br><br>
             <ng-template ngbPanelContent>
-              <input class="form-control" type="text"  placeholder="Cedula">
-              <button id="btn5" class="btn btn-success">BUSCAR</button>
+              <input class="form-control" type="text" [(ngModel)]="cedulacliente" placeholder="Cedula"><br>
+              <button id="btn5" class="btn btn-success" (click)="buscarCliente()">BUSCAR</button><br><br>
+              
+
+              <div>
+                <label>
+                  Nombre: {{nombrecliente}}
+                  <!--
+                  <input [(ngModel)]="nombre" />
+                  -->
+                </label><br>
+                <label>
+                  Direccion: {{direccioncliente}}
+                </label><br>
+                <label>
+                  Email: {{emailcliente}}
+                </label><br>
+                <label>
+                  Telefno: {{telefonocliente}}
+                </label><br>
+              
+              </div>
+              
+              
+
             </ng-template>
           </ngb-panel>
 
           <ngb-panel id="btn1" title="ACTUALIZAR CLIENTE"><br><br>
             <ng-template ngbPanelContent>
-              <input class="form-control" type="text"  placeholder="Cedula">
-              <button id="btn5" class="btn btn-success">BUSCAR</button>
+              <input class="form-control" type="text"  placeholder="Cedula" [(ngModel)]="cedulacliente"><br>
+              <button id="btn5" class="btn btn-success" (click)="buscarCliente()">BUSCAR</button><br><br>
+
+              <div>
+                
+                  <label>
+                    Nombre: {{nombrecliente}}
+                    <!--
+                    <input [(ngModel)]="nombre" />
+                    -->
+                  </label><br>
+                  <label>
+                    Direccion: {{direccioncliente}}
+                  </label><br>
+                  <label>
+                    Email: {{emailcliente}}
+                  </label><br>
+                  <label>
+                    Telefno: {{telefonocliente}}
+                  </label><br>
+                
+                  <label>Nombres
+                    <!--Nombre: {{nombre}}-->
+                    <input class="form-control" type="text" [(ngModel)]="nombrecliente" />
+                  </label>
+                  <label>Direccion
+                    <input class="form-control" type="text" [(ngModel)]="direccioncliente" />
+                  </label>
+                  <label>Email
+                    <input  class="form-control" type="text" [(ngModel)]="emailcliente" />
+                  </label>
+                  <label>Telefono
+                    <input  class="form-control" type="text" [(ngModel)]="telefonocliente" />
+                  </label><br><br>
+              </div>
+
+              <button id="btn5" class="btn btn-success" (click)="actualizarCliente()">ACTUALIZAR</button><br><br>
+              
+              
             </ng-template>
+            
           </ngb-panel>
           <ngb-panel  title="ACTUALIZAR CLIENTE"><br><br>
             <ng-template ngbPanelContent>

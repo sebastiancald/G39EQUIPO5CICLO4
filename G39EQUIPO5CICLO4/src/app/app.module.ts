@@ -18,6 +18,8 @@ import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { TablaMostrarComponent } from './componentes/tabla-mostrar/tabla-mostrar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ClientesComponent } from './componentes/clientes/clientes.component';
+import { VentasComponent } from './componentes/ventas/ventas.component';
+import {MatInputModule} from '@angular/material/input'
 
 
 
@@ -36,7 +38,8 @@ import { ClientesComponent } from './componentes/clientes/clientes.component';
     SidebarComponent,
     TablaMostrarComponent,
     NavbarComponent,
-    ClientesComponent
+    ClientesComponent,
+    VentasComponent
     
     
     
@@ -47,7 +50,8 @@ import { ClientesComponent } from './componentes/clientes/clientes.component';
     BrowserAnimationsModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule, 
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

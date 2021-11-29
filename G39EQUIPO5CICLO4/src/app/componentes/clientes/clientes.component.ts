@@ -33,6 +33,7 @@ direccioncliente!: string;
 emailcliente!: string;
 nombrecliente!:string;
 telefonocliente!:string;
+id!: string;
 postData(){
   this.objectHttp.post<any>(
     'http://localhost:8080/api/clientes',{
@@ -58,11 +59,63 @@ resultados: any;
     this.file=evento.target.file[0];
   }
 
-  async onUpload(){
-    this.resultados=await this.clientesService.upload(this.file);
-    console.log(this.resultados);
+ 
+
+  //BUscar cliente//
+  
+
+
+  buscarCliente() {
+    this.clientesService.buscar(this.cedulacliente).subscribe((cliente: any[]) => {
+      console.log(cliente);
+      this.id = cliente[0].id;
+      this.nombrecliente = cliente[0].nombrecliente;
+      this.direccioncliente = cliente[0].direccioncliente;
+      this.emailcliente = cliente[0].emailcliente;
+      this.telefonocliente = cliente[0].telefonocliente;
+
+    });
+
   }
 
+  //Eliminar cliente//
+  eliminar() {
+    this.clientesService.eliminar(this.id).subscribe(()=>{
+      alert("Cliente eliminado con exito")
+      this.id = "";
+    })
+  }
+
+  //Actualizar cliente//
+
+
+  public actualizarCliente() {
+    let cliente = {
+      cedulacliente: this.cedulacliente,
+      direccioncliente: this.direccioncliente,
+      emailcliente: this.emailcliente,
+      nombrecliente: this.nombrecliente,
+      telefonocliente: this.telefonocliente,
+    };
+
+    this.clientesService.actualizar(this.id, cliente).subscribe((cliente) => {
+      this.id = "";
+      this.direccioncliente ="";
+      this.emailcliente = "";
+      this.telefonocliente = "";
+
+
+      alert('Cliente actualizado exitosamente');
+      this.direccioncliente = "";
+      this.emailcliente = "";
+      this.nombrecliente = "";
+      this.telefonocliente = "";
+      
+      alert('Cliente actualizado exitosamente');
+      console.log(cliente);
+    });
+  
+  }
 
 
 }

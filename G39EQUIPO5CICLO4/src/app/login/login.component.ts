@@ -58,7 +58,7 @@ import { HttpClient } from '@angular/common/http';
 
   export class LoginComponent implements OnInit {
     
-    
+    hide = true;
   
     constructor() { }
   
@@ -67,6 +67,7 @@ import { HttpClient } from '@angular/common/http';
     logear(usser: string ='admininicial', pss:any='admin123456'){
       const usuario = usser;
       const contrase = pss;
+      
       console.log("usuario: " + usuario)
       console.log("contraseña: " + contrase)
       if( usuario == 'admininicial' && contrase == 'admin123456' ){

@@ -10,7 +10,16 @@
         <li><a class="nav-link text-white" aria-current="page" [routerLink]="'producto'">Productos</a></li>
         <li><a class="nav-link text-white" aria-current="page" [routerLink]="'ventas'">Ventas</a></li>
         <li><a class="nav-link text-white" aria-current="page" [routerLink]="'usuarios'">Usuarios</a></li>
-        <li><a class="nav-link text-white" aria-current="page" [routerLink]="'login'">Otros</a></li>
+        <li><div class="dropdown">
+          <p class=" dropdown-toggle"  id="sede" data-bs-toggle="dropdown" aria-expanded="false">
+            Sedes
+          </p>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" type="button">Bogota</button></li>
+            <li><button class="dropdown-item" type="button">Medellin</button></li>
+            <li><button class="dropdown-item" type="button">Cali</button></li>
+          </ul>
+        </div></li>
     </ul>
     <hr>
     <div >
